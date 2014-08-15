@@ -39,6 +39,11 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 
+# Twitter bootstrap
+
+gem 'bootstrap-sass', '~> 3.1.1'
+
+
 # Bloc
  group :production do
    gem 'pg'
