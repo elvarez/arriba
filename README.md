@@ -1,3 +1,6 @@
 == README
 
-Bloccit! Trying it out!
+*SETUP*
+
+Environment variables are set in application.yml
+

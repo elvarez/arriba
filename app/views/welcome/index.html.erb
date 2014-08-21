@@ -1,10 +1,27 @@
-<h1>Welcome Bloccer!</h1>
+<br/>
 
+<div class="jumbotron">
+  <h1>Blocc-it</h1>
 
-<p>Home page!</p>
+  <p>Bloccit is a resource for sharing links with your friends</p>
 
-<div>Post 1 goes here</div>
-<div>Post 2!</div>
+  <p>
+    <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary' %> or
+    <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %> today!
+  </p>
+</div>
 
-<section> This is a section element, between section tags!</section>
-
+<div class="row">
+  <div class="col-md-4">
+    <h2>Solves world hunger</h2>
+    <p>Bloccit will deliver food and water to those in need, all over the world. No need to waste buckets of ice!</p>
+  </div>
+  <div class="col-md-4">
+    <h2>Eliminates poverty</h2>
+    <p>Bloccit will deliver money and education to those in need, all over the world. Because you can't have one without the other!</p>
+  </div>
+  <div class="col-md-4">
+    <h2>Makes you better looking</h2>
+    <p>Bloccit will make you better looking: it's scientifically proven to make men look like Ryan Gosling and women look like Shakira  - In her good days.</p>
+  </div>
+</div>
