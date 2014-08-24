@@ -4,11 +4,11 @@ def my_name
 "Jose Alvarez"
 end
 
-def form_group_tag(errors, &block)
+def div_class_select(errors)
   if errors.any?
-    content_tag :div, capture(&block), class: 'form-group-has-error'
+    "form-group-has-error"
   else
-    content_tag :div, capture(&block), class: 'form-group'
+    "form-group"
   end
 end
 
@@ -20,3 +20,5 @@ def markdown(text)
 end
 
 end
+
+
