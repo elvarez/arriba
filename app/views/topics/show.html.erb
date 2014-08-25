@@ -14,7 +14,9 @@
 	    <%= link_to (markdown p.title), [@topic, p] %>
 	  </h4>
 	  <small>
-	    submitted <%= time_ago_in_words(p.created_at) %> ago by <%= p.user.name %><br/>
+	    <%= image_tag(p.user.avatar.tiny.url) if p.user.avatar? %>
+	    submitted <%= time_ago_in_words(p.created_at) %> ago by
+	    <%= p.user.name %><br/>
 	    <%= p.comments.count %> Comments
 	  </small>
         </div>
