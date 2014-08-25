@@ -11,7 +11,7 @@
       <div class="media">
 	<div class="media-body">
 	  <h4 class="media-heading">
-	    <%= link_to (markdown p.title), [@topic, p] %>
+	    <%= link_to (markdown p.title), [@topic, p] %> <%= image_tag(p.image.thumb.url) if p.image? %>
 	  </h4>
 	  <small>
 	    <%= image_tag(p.user.avatar.tiny.url) if p.user.avatar? %>
