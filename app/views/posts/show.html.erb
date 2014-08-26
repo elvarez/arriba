@@ -18,15 +18,13 @@
 </div>
 
 <div class="row">
-
-  
   <div class="col-md-8">
     <h4> Comments <h4/>
     <%= render partial: 'comments/comment', locals: {comments: @comments} %>
   </div>
-
   <div class="col-md-8">
+    <% if policy(Comment.new).create? %>
     <%= render partial: 'comments/form', locals: {topic: @topic, post: @post, comment: @post.comments.build} %>
+    <% end %>
   </div>
-
 </div>
