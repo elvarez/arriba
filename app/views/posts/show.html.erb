@@ -11,9 +11,22 @@
     <p><%= markdown @post.body %> <%= image_tag(@post.image.url) if @post.image? %></p>
   </div>
   <div class="col-md-4">
-    
     <% if policy(@post).edit? %>
     <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
     <% end %>
   </div>
+</div>
+
+<div class="row">
+
+  
+  <div class="col-md-8">
+    <h4> Comments <h4/>
+    <%= render partial: 'comments/comment', locals: {comments: @comments} %>
+  </div>
+
+  <div class="col-md-8">
+    <%= render partial: 'comments/form', locals: {topic: @topic, post: @post, comment: @post.comments.build} %>
+  </div>
+
 </div>

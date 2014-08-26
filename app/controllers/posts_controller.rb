@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
+
   def show
     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
+    @comments = @post.comments
   end
 
   def new
@@ -21,7 +23,7 @@ class PostsController < ApplicationController
       flash[:notice] = "Post saved!"
       redirect_to [@topic, @post]
     else
-      flash.now[:error] = "There was an error saving this post. Try again. "
+      flash.now[:error] = "There was an error saving this post. Try again."
       render :new
     end
   end

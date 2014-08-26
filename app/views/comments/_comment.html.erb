@@ -1,0 +1,9 @@
+    <% comments.each do |comment| %>
+      <div class="media">
+	<div class="media-body">
+	  <small>
+	    <%= comment.body %> <%= comment.user.name %>
+	  </small>
+        </div>
+      </div>
+      <% end %>
