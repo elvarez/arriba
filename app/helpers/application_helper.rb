@@ -19,4 +19,19 @@ def markdown(text)
   (redcarpet.render text).html_safe
 end
 
+def will_paginate(resource)
+  tot = resource.except(:limit, :offset).count
+  lim = resource.limit_value
+  
+  page_num = (tot/lim.to_f).ceil
+  @html = String.new
+
+  (1..page_num).each do |i|
+    @html += link_to "#{i} // ", params.merge( page: "#{i}")
+  end
+
+  @html.html_safe
+end
+
+
 end

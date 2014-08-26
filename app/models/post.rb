@@ -1,4 +1,8 @@
 class Post < ActiveRecord::Base
+
+# Don't know why this doesn't work
+#  include PagMod
+
   has_many :comments
   belongs_to :user
     belongs_to :topic
@@ -11,5 +15,12 @@ class Post < ActiveRecord::Base
   validates :body, length: { minimum: 20 }, presence: true
   validates :topic, presence: true
   validates :user, presence: true
+
+
+  def self.paginate (pagehash)
+self.limit(pagehash[:per_page]).offset(pagehash[:per_page]*((pagehash[:page].to_i)-1))
+  end
+
+
 
 end
