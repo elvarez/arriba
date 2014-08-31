@@ -27,6 +27,8 @@ gem 'pundit'
 
 gem 'redcarpet'
 
+
+
 gem 'carrierwave'
 gem 'mini_magick'
 
@@ -72,3 +74,7 @@ gem 'bootstrap-sass', '~> 3.1.1'
  group :development do
    gem 'sqlite3'
  end
+
+group :test do
+  gem 'rspec-rails'
+end
