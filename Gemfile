@@ -76,5 +76,5 @@ gem 'bootstrap-sass', '~> 3.1.1'
  end
 
 group :test do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.0.0'
 end
