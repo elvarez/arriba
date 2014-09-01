@@ -58,10 +58,6 @@ class TopicsController < ApplicationController
       render :show
     end
   end
-
-    
-    
-
   
   private
 
