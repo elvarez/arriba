@@ -3,14 +3,13 @@ require 'rails_helper'
 describe User do
 
   include TestFactories
-  include Devise::TestHelpers
 
   describe "#favorited(post)" do
 
     before do 
       @post = associated_post
       @user = authenticated_user
-      sign_in @user
+      post = @post
     end
 
     it "returns 'nil' if the user has not favorited the post" do
