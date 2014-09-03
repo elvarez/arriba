@@ -77,5 +77,5 @@ gem 'bootstrap-sass', '~> 3.1.1'
 
 group :test do
   gem 'rspec-rails', '~> 3.0.0'
-  gem 'capybara'
+  gem 'capybara', '~> 2.3.0'
 end
