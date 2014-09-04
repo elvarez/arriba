@@ -5,17 +5,23 @@ class CommentsController < ApplicationController
   
   def create
     @post = Post.find(params[:post_id])
+    @comments = @post.comments
+    
     @comment = current_user.comments.build(comment_params)
     @comment.post = @post
+    @new_comment = Comment.new
+
     @topic = @post.topic
     authorize @comment
 
     if @comment.save
       flash[:notice] = "Comment saved!"
-      redirect_to [@topic, @post]
     else
       flash.now[:error] = "There was an error saving this comment. Try again. "
-      render :new
+    end
+
+    respond_with(@comment) do |format|
+      format.html { redirect_to [@post.topic, @post] }
     end
   end
 
@@ -43,9 +49,5 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:body)
   end
-
-
-
-
 
 end
