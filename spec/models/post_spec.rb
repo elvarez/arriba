@@ -2,14 +2,9 @@ require 'rails_helper'
 
 describe Post do
 
-  include TestFactories
-
   describe "vote methods" do
     before do
-#      @post = Post.create(title: 'post title', body: 'long post body is long')
-#      allow(@post).to receive(:create_vote)
-#      @post.save
-      @post = associated_post
+      @post = create(:post)
 
       3.times { @post.votes.create(value: 1) }
       2.times { @post.votes.create(value: -1) }
@@ -35,7 +30,7 @@ describe Post do
 
     describe '#create_vote' do
       it "auto up votes new posts" do
-        post = associated_post
+        post = create(:post)
         expect( post.up_votes ).to eq(0)
         post.create_vote
         expect( post.up_votes ).to eq(1)
